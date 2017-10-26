@@ -19,8 +19,9 @@
 		{
 			url=document.getElementById("website").value;
 			tag=document.getElementById("tag").value;
-			alert(tag);
-			finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+url+"&va="+tag;
+			data = [url,tag];
+			alert(data);
+			finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+data;
 			alert(finalUrl);
 			window.open(finalUrl);
 		}
