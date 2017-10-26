@@ -19,10 +19,12 @@
 		{
 			url=document.getElementById("website").value;
 			tag=document.getElementById("tag").value;
-			data = [url,tag];
-			alert(data);
-			finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+data;
-			alert(finalUrl);
+			//data = [url,tag];
+			//alert(data);
+			//var encodedParam = encodeURIComponent('https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val=one&value=http://ishank.me/test.html');
+			//finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val[]="+data[0]+"&val[]="+data[1];
+			//alert(finalUrl);
+			finalUrl = "https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+tag;
 			window.open(finalUrl);
 		}
 	</script>
