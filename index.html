@@ -18,8 +18,10 @@
 		function myFunction()
 		{
 			url=document.getElementById("website").value;
-			//alert(url);
-			finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+url;
+			tag=document.getElementById("tag").value;
+			alert(tag);
+			finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+url+"&va="+tag;
+			alert(finalUrl);
 			window.open(finalUrl);
 		}
 	</script>
@@ -34,67 +36,87 @@
 			<section>
 
 				<style>
-					.card-body p {
-						font-weight: 300;
-					}
-					.wow {
-						visibility: hidden;
-					}
-					.between-sections {
-						margin-top: 4rem;
-						margin-bottom: 4rem;
-					}
-					.view:not(.hm-zoom) {
-						overflow:visible;
-					}
-				</style>
+				.card-body p {
+					font-weight: 300;
+				}
+				.wow {
+					visibility: hidden;
+				}
+				.between-sections {
+					margin-top: 4rem;
+					margin-bottom: 4rem;
+				}
+				.view:not(.hm-zoom) {
+					overflow:visible;
+				}
+			</style>
 
-				<div class="container text-center">
-					<section class="section">
-						<center>
-							<!--Section heading-->
-							<h1 class="section-heading h1 mt-0">Distributed Web Crawler</h1>
-						</center>
+			<div class="container text-center">
+				<section class="section">
+					<center>
+						<!--Section heading-->
+						<h1 class="section-heading h1 mt-0">Distributed Web Crawler</h1>
+					</center>
+				</section>
+			</div>
+			<h1 class="animated fadeIn mb-4">Using AWS Lambda Technology</h1>
+
+			<center>
+				<h5 class="animated fadeIn mb-3">Highly Scalable Parallel Distributed Crawler</h5>
+			</center>
+		</div>
+		<!-- /Start your project here-->
+
+		<main>
+
+			<div class="container-fluid" style="background: rgba(256, 256, 256, 0);">
+				<div class="text-center" >
+					<!--Section: Dynamic content wrapper-->
+					<section id="dynamicContentWrapper-docsPanel" class="mb-5" >
+						<div class="card text-center mb-4" style="background: rgba(256, 256, 256, 0.5);">
+							<div class="card-body">
+								<p>
+									<strong>Enter Here Website To Be Crawled.</strong> (Full Link).
+								</p>
+								<form class="form-inline pl-auto d-flex justify-content-center" onsubmit="myFunction()" method="get">
+									<!-- link -->
+									<div class="md-form form-group">
+										<i class="fa fa-external-link prefix"></i>
+										<input type="text" id="website" data-bf-newsletter="name" class="form-control">
+										<label for="docs-newsletter-text" data-error="wrong" data-success="right">Your Link Please!</label>
+									</div>
+									<!-- tags -->
+									<div class="md-form form-group">
+										<i class="fa fa-tag prefix"></i>
+										<input type="text" id="tag" data-bf-newsletter="name" class="form-control">
+										<label for="docs-newsletter-text" data-error="wrong" data-success="right">Enter any specific tag</label>
+									</div>
+									<!-- submit button -->
+									<div class="md-form form-group">
+										<button class="btn btn-primary" id="docs-newsletter-approved" data-bf-newsletter="submit">Find 
+											<i class="fa fa-paper-plane ml-1"></i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
 					</section>
+					<!--Section: Dynamic content wrapper-->
+
 				</div>
-				<h1 class="animated fadeIn mb-4">Using AWS Lambda Technology</h1>
-
-				<center><h5 class="animated fadeIn mb-3">Highly Scalable Parallel Distributed Crawler</h5>
-					<button type="button" class="btn btn-success waves-effect waves-light">Success</button></center>
-				</div>
-				<!-- /Start your project here-->
-
-				<main>
-
-					<div class="container-fluid" style="background: rgba(256, 256, 256, 0);">
-						<div class="text-center" >
-							<!--Section: Dynamic content wrapper-->
-							<section id="dynamicContentWrapper-docsPanel" class="mb-5" >
-								<div class="card text-center mb-4" style="background: rgba(256, 256, 256, 0.5);">
-									<div class="card-body"><p><strong>Enter Here Website To Be Crawled.</strong> (Full Link).</p><form class="form-inline pl-auto d-flex justify-content-center" onsubmit="myFunction()">
-										<div class="md-form form-group">
-											<i class="fa fa-globe fa-2x prefix"></i>
-											<input type="text" id="website" data-bf-newsletter="name" class="form-control">
-											<label for="docs-newsletter-text" data-error="wrong" data-success="right">Your Link Please!</label></div>
-											<div class="md-form form-group"><i class="fa fa-envelope prefix"></i>
-												<input type="email" id="docs-newsletter-email" data-bf-newsletter="email" class="form-control"><label for="docs-newsletter-email" data-error="wrong" data-success="right">Type your email</label></div>
-												<div class="md-form form-group"><button class="btn btn-primary" id="docs-newsletter-approved" data-bf-newsletter="submit">Subscribe <i class="fa fa-paper-plane ml-1"></i></button><a class="btn btn-outline-primary" id="docs-newsletter-removed">No, thanks<i class="fa fa-times ml-2"></i></a></div></form></div></div></section>
-												<!--Section: Dynamic content wrapper-->
-
-											</div>
-</div>
+			</div>
 
 
-										</main>
-										<!-- SCRIPTS -->
-										<!-- JQuery -->
-										<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-										<!-- Bootstrap tooltips -->
-										<script type="text/javascript" src="js/popper.min.js"></script>
-										<!-- Bootstrap core JavaScript -->
-										<script type="text/javascript" src="js/bootstrap.min.js"></script>
-										<!-- MDB core JavaScript -->
-										<script type="text/javascript" src="js/mdb.min.js"></script>
-									</body>
+		</main>
+		<!-- SCRIPTS -->
+		<!-- JQuery -->
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="js/mdb.min.js"></script>
+	</body>
 
-									</html>
+	</html>
