@@ -14,18 +14,113 @@
 	<link href="css/mdb.min.css" rel="stylesheet">
 	<!-- Your custom styles (optional) -->
 	<link href="css/style.css" rel="stylesheet">
-	<script type="text/javascript">
-		function myFunction()
+	<style type="text/css">
+	@import('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css')
+
+	.funkyradio div {
+		clear: both;
+		overflow: hidden;
+	}
+
+	.funkyradio label {
+		width: 100%;
+		border-radius: 3px;
+		border: 1px solid #D1D3D4;
+		font-weight: normal;
+	}
+
+	.funkyradio input[type="radio"]:empty{
+		display: none;
+	}
+
+	.funkyradio input[type="radio"]:empty ~ label{
+		position: relative;
+		line-height: 2.5em;
+		text-indent: 3.25em;
+		margin-top: 2em;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.funkyradio input[type="radio"]:empty ~ label:before{
+		position: absolute;
+		display: block;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		content: '';
+		width: 2.5em;
+		background: #D1D3D4;
+		border-radius: 3px 0 0 3px;
+	}
+
+	.funkyradio input[type="radio"]:hover:not(:checked) ~ label {
+		color: #888;
+	}
+
+	.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before{
+		content: '\2714';
+		text-indent: .9em;
+		color: #C2C2C2;
+	}
+
+	.funkyradio input[type="radio"]:checked ~ label{
+		color: #777;
+	}
+
+	.funkyradio input[type="radio"]:checked ~ label:before{
+		content: '\2714';
+		text-indent: .9em;
+		color: #333;
+		background-color: #ccc;
+	}
+
+	.funkyradio input[type="radio"]:focus ~ label:before{
+		box-shadow: 0 0 0 3px #999;
+	}
+
+	.funkyradio-success input[type="radio"]:checked ~ label:before{
+		color: #fff;
+		background-color: #5cb85c;
+	}
+</style>
+<script type="text/javascript">
+	function myFunction()
+	{
+
+		url=document.getElementById("website").value;
+		tag=document.getElementById("tag").value;
+		//alert("fdsada");
+		var radios = document.getElementsByName('radio');
+		//alert(url);
+		//alert(tag);
+		//finalUrl = "https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+","+url+","+tag;
+		//alert(finalUrl);
+		
+		//alert("DFAdf");
+		for (var i = 0; i < radios.length; i++)
 		{
-			url=document.getElementById("website").value;
-			tag=document.getElementById("tag").value;
-			//data = [url,tag];
-			//alert(data);
-			//var encodedParam = encodeURIComponent('https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val=one&value=http://ishank.me/test.html');
-			//finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val[]="+data[0]+"&val[]="+data[1];
-			//alert(finalUrl);
-			finalUrl = "https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+tag;
-			window.open(finalUrl);
+			//alert("vadfas");
+			if (radios[i].checked)
+			{
+				type = radios[i].value;
+				finalUrl = "https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val="+type+","+url+","+tag;
+				window.open(finalUrl);
+				break;
+			}
+		}
+		//data = [url,tag];
+		//alert(type);
+		//var encodedParam = encodeURIComponent('https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val=one&value=http://ishank.me/test.html');
+		//finalUrl="https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val[]="+data[0]+"&val[]="+data[1];
+		//alert(finalUrl);
+			
+
+
+
 		}
 	</script>
 </head>
@@ -94,32 +189,46 @@
 										<input type="text" id="tag" data-bf-newsletter="name" class="form-control">
 										<label for="docs-newsletter-text" data-error="wrong" data-success="right">Enter any specific tag</label>
 									</div>
-									<!-- submit button -->
-									<div class="md-form form-group">
-										<button class="btn btn-primary" id="docs-newsletter-approved" data-bf-newsletter="submit">Find 
-											<i class="fa fa-paper-plane ml-1"></i>
-										</button>
-									</div>
-								</form>
+									<!-- radio -->
+									<div class="col-md-4">
+										<div class="col-md-6">
+											<div class="funkyradio">
+												<div class="funkyradio-success">
+													<input type="radio" name="radio" value="table" id="radio1" />
+													<label for="radio1">Table</label>
+												</div>
+												<div class="funkyradio-success">
+													<input type="radio" name="radio" value="text" id="radio2" checked/>
+													<label for="radio2">Text</label>
+												</div>
+											</div>
+										</div>
+										<!-- submit button -->
+										<div class="md-form form-group">
+											<button class="btn btn-primary" id="docs-newsletter-approved" data-bf-newsletter="submit">Find 
+												<i class="fa fa-paper-plane ml-1"></i>
+											</button>
+										</div>
+									</form>
+								</div>
 							</div>
-						</div>
-					</section>
-					<!--Section: Dynamic content wrapper-->
+						</section>
+						<!--Section: Dynamic content wrapper-->
 
+					</div>
 				</div>
-			</div>
 
 
-		</main>
-		<!-- SCRIPTS -->
-		<!-- JQuery -->
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-		<!-- Bootstrap tooltips -->
-		<script type="text/javascript" src="js/popper.min.js"></script>
-		<!-- Bootstrap core JavaScript -->
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<!-- MDB core JavaScript -->
-		<script type="text/javascript" src="js/mdb.min.js"></script>
-	</body>
+			</main>
+			<!-- SCRIPTS -->
+			<!-- JQuery -->
+			<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+			<!-- Bootstrap tooltips -->
+			<script type="text/javascript" src="js/popper.min.js"></script>
+			<!-- Bootstrap core JavaScript -->
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<!-- MDB core JavaScript -->
+			<script type="text/javascript" src="js/mdb.min.js"></script>
+		</body>
 
-	</html>
+		</html>
