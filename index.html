@@ -101,17 +101,20 @@
 		//alert(finalUrl);
 		
 		//alert("DFAdf");
-		for (var i = 0; i < radios.length; i++)
-		{
-			//alert("vadfas");
-			if (radios[i].checked)
-			{
-				type = radios[i].value;
-				finalUrl = "https://w69vr3bu07.execute-api.us-east-1.amazonaws.com/default/new-crawler?url="+url;
-				window.open(finalUrl);
-				break;
-			}
-		}
+		finalUrl = "https://w69vr3bu07.execute-api.us-east-1.amazonaws.com/default/new-crawler?url="+url;
+		window.open(finalUrl);
+		break;
+		//for (var i = 0; i < radios.length; i++)
+		//{
+		//	//alert("vadfas");
+		//	if (radios[i].checked)
+		//	{
+		//		type = radios[i].value;
+		//		finalUrl = "https://w69vr3bu07.execute-api.us-east-1.amazonaws.com/default/new-crawler?url="+url;
+		//		window.open(finalUrl);
+		//		break;
+		//	}
+		//}
 		//data = [url,tag];
 		//alert(type);
 		//var encodedParam = encodeURIComponent('https://6e4aek9u2l.execute-api.us-east-1.amazonaws.com/prod/number?val=one&value=http://ishank.me/test.html');
@@ -209,6 +212,7 @@
 												<i class="fa fa-paper-plane ml-1"></i>
 											</button>
 										</div>
+									</div>
 									</form>
 								</div>
 							</div>
